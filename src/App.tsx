@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, useLocation, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, useLocation, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AnimatePresence, motion } from 'framer-motion';
 
