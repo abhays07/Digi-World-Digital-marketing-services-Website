@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, useLocation, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from '@/context/AuthContext';
+import ProtectedRoute from '@/components/ProtectedRoute';
 import { Toaster } from 'react-hot-toast';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -108,8 +110,11 @@ const AppContent = () => {
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/admin-portal-secure-access" element={<Login />} />
                             
-                            {/* Admin Section */}
-                            <Route element={<AdminLayout />}>
+                            <Route element={
+                                <ProtectedRoute>
+                                    <AdminLayout />
+                                </ProtectedRoute>
+                            }>
                                 <Route path="/dashboard" element={<Dashboard />} />
                                 <Route path="/clients" element={<ClientLedger />} />
                                 <Route path="/clients/:id" element={<ClientDetail />} />
@@ -136,8 +141,10 @@ const AppContent = () => {
 const App: React.FC = () => {
   return (
     <Router>
-      <ScrollToTop />
-      <AppContent />
+        <AuthProvider>
+            <ScrollToTop />
+            <AppContent />
+        </AuthProvider>
     </Router>
   );
 };

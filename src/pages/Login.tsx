@@ -4,9 +4,11 @@ import { motion } from 'framer-motion';
 import { toast } from 'react-hot-toast';
 import { authService } from '../services/api';
 import SEO from '../components/SEO';
+import { useAuth } from '@/context/AuthContext';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -16,7 +18,8 @@ const Login: React.FC = () => {
     setLoading(true);
 
     try {
-      await authService.login(email, password);
+      const response = await authService.login(email, password);
+      login(response.token, response.email);
       toast.success('Successfully logged in!');
       navigate('/dashboard');
     } catch (error: any) {
