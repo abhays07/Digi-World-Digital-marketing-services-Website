@@ -29,6 +29,7 @@ const Home: React.FC = () => {
       <SEO 
         title="Digi-World Promotions | Political Digital Marketing Agency"
         description="Leading political digital marketing agency in Madhya Pradesh & Uttar Pradesh. We specialize in election campaigns, social media management, and voter outreach."
+        keywords="Political Digital Marketing, Election Management India, Voter Targeting, Political Branding, Social Media for Politicians, Election War Room, WhatsApp Marketing for Elections"
       />
       
       {/* Hero Section */}
@@ -187,6 +188,64 @@ const Home: React.FC = () => {
       <JoinTeam />
       {/* Contact Section */}
       <Contact withSEO={false} />
+      {/* Semantic SEO Section - Service Areas & Keywords */}
+      <section className="bg-brand-dark py-10 px-4 border-t border-white/5">
+        <div className="max-w-7xl mx-auto">
+           <h3 className="text-xl font-bold text-white mb-6">Our Service Areas & Expertise</h3>
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-sm text-gray-400">
+              
+              {/* Pillar 1 */}
+              <div>
+                <h4 className="text-brand-orange font-semibold mb-3">Political Management</h4>
+                <ul className="space-y-2">
+                   <li>Election campaign management India</li>
+                   <li>Political consulting services</li>
+                   <li>Constituency profiling & analysis</li>
+                   <li>Booth level management (BLM)</li>
+                   <li>Voter sentiment analysis</li>
+                   <li>Digital war room setup</li>
+                </ul>
+              </div>
+
+              {/* Pillar 2 */}
+              <div>
+                <h4 className="text-brand-pink font-semibold mb-3">Social Media Growth</h4>
+                <ul className="space-y-2">
+                   <li>Politician personal branding</li>
+                   <li>Verified badge assistance (Blue Tick)</li>
+                   <li>Organic follower growth for leaders</li>
+                   <li>Twitter/X management for politicians</li>
+                   <li>WhatsApp bulk messaging & marketing</li>
+                </ul>
+              </div>
+
+               {/* Pillar 3 */}
+              <div>
+                <h4 className="text-brand-blue font-semibold mb-3">Targeted Advertising</h4>
+                 <ul className="space-y-2">
+                   <li>Facebook ads for elections</li>
+                   <li>Instagram voter targeting</li>
+                   <li>YouTube political video ads</li>
+                   <li>Location-based mobile advertising</li>
+                   <li>Caste/Demographic specific targeting</li>
+                </ul>
+              </div>
+
+               {/* Pillar 4 */}
+              <div>
+                <h4 className="text-white font-semibold mb-3">Creative & Local Reach</h4>
+                 <ul className="space-y-2">
+                   <li>Election manifesto design</li>
+                   <li>Political rally video editing</li>
+                   <li>Viral reel creation for Instagram</li>
+                   <li>Political agency in Madhya Pradesh</li>
+                   <li>Best election promoter in UP/Bihar</li>
+                   <li>Online reputation management (ORM)</li>
+                </ul>
+              </div>
+           </div>
+        </div>
+      </section>
     </div>
   );
 };
