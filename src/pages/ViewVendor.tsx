@@ -317,6 +317,7 @@ const ViewVendor: React.FC = () => {
                             <tr>
                               <th className="px-6 py-4">Date</th>
                               <th className="px-6 py-4">Cycle</th>
+                              <th className="px-6 py-4">Note</th>
                               <th className="px-6 py-4">Amount</th>
                               <th className="px-6 py-4 text-center">Proof</th>
                             </tr>
@@ -327,6 +328,9 @@ const ViewVendor: React.FC = () => {
                                   <tr key={pay._id} className="hover:bg-slate-700/30">
                                       <td className="px-6 py-4">{new Date(pay.date).toLocaleDateString()}</td>
                                       <td className="px-6 py-4 text-xs text-slate-500">{pay.cycleName}</td>
+                                      <td className="px-6 py-4 text-slate-400 max-w-[200px] truncate" title={pay.note}>
+                                        {pay.note || '-'}
+                                      </td>
                                       <td className="px-6 py-4 font-bold text-red-400">- ₹{pay.amount.toLocaleString()}</td>
                                       <td className="px-6 py-4 text-center">
                                           {pay.screenshotUrl ? (
@@ -338,7 +342,7 @@ const ViewVendor: React.FC = () => {
                                   </tr>
                                 ))
                             ) : (
-                                <tr><td colSpan={4} className="p-8 text-center text-slate-500">No payment records found.</td></tr>
+                                <tr><td colSpan={5} className="p-8 text-center text-slate-500">No payment records found.</td></tr>
                             )}
                           </tbody>
                         </table>

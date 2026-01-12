@@ -78,7 +78,11 @@ const ClientLedger: React.FC = () => {
       }
   };
 
-  if (isLoading) return <div className="text-center py-12 text-slate-400">Loading Ledger...</div>;
+  if (isLoading) return (
+    <div className="flex justify-center py-20">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-orange"></div>
+    </div>
+  );
 
   const filteredClients = clients.filter(c => showArchived ? c.isArchived : !c.isArchived);
 

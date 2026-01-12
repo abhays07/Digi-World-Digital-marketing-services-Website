@@ -24,30 +24,43 @@ const SEO: React.FC<SEOProps> = ({
   const metaDescription = description || "Digi-World Promotions Official: India's leading political digital agency. Expert election management, voter targeted ads, political graphics, & video editing.";
   const metaKeywords = keywords || "Political Digital Marketing, Election Campaign Management, Voter Targeting, Social Media for Politicians, Digi-World Promotions";
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Digi-World Promotions Official",
-    "alternateName": "Digi-World Promotions",
-    "url": "https://digiworldpromotions.in",
-    "logo": "https://digiworldpromotions.in/logo.png",
-    "description": metaDescription,
-    "areaServed": {
-      "@type": "Country",
-      "name": "India"
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Digi-World Promotions Official",
+      "alternateName": "Digi-World Promotions",
+      "url": "https://digiworldpromotions.in",
+      "logo": "https://digiworldpromotions.in/logo.png",
+      "description": metaDescription,
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bhopal",
+        "addressRegion": "Madhya Pradesh",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61559011646766",
+        "https://www.instagram.com/dw_promotions/"
+      ],
+      "priceRange": "$$"
     },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bhopal",
-      "addressRegion": "Madhya Pradesh",
-      "addressCountry": "IN"
-    },
-    "sameAs": [
-      "https://www.facebook.com/profile.php?id=61559011646766",
-      "https://www.instagram.com/dw_promotions/"
-    ],
-    "priceRange": "$$"
-  };
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Digi-World Promotions",
+      "url": "https://digiworldpromotions.in",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://digiworldpromotions.in/services?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ];
 
   return (
     <Helmet>
